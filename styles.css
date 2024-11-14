@@ -1,0 +1,491 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #ff3366, #ff0033);
+    padding: 15px 20px;
+    color: #f4f4f4;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff3366;
+    cursor: pointer;
+}
+
+.auth-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-options select, .auth-options button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.auth-options select:hover, .auth-options button:hover {
+    background-color: #ff3366;
+}
+
+/* Navbar Principal com Rolagem Horizontal e Seta Indicativa no Mobile */
+.main-nav {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ff3366;
+    overflow-x: auto;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.main-nav ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #ff3366;
+}
+
+.main-nav::after {
+    content: '→';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #ff3366;
+    display: none; /* Oculta a seta em desktop */
+}
+
+@media (max-width: 768px) {
+    .main-nav::after {
+        display: block; /* Exibe a seta no mobile */
+    }
+}
+
+/* Busca Avançada */
+/* Estilo do botão */
+.toggle-filters-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff3366;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    
+}
+
+.toggle-filters-btn:hover {
+    background-color: #ff0033;
+}
+
+/* Ocultar a seção de busca avançada inicialmente */
+/* Ocultar a seção de busca avançada inicialmente */
+.advanced-search {
+    display: none;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.toggle-filters-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Rotaciona a seta ao expandir */
+.toggle-filters-btn[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+
+
+.search-fields, .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Aumenta o espaçamento entre os inputs */
+    margin-bottom: 20px; /* Espaço abaixo dos campos */
+}
+
+.search-fields input[type="text"], .filter-options select {
+    padding: 15px;
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    width: 100%;
+    max-width: 250px;
+    transition: border 0.3s ease;
+    margin: 10px; /* Espaçamento ao redor dos inputs */
+}
+
+
+.search-fields input[type="text"]::placeholder {
+    color: #888;
+}
+
+.search-fields input[type="text"]:focus, .filter-options select:focus {
+    outline: none;
+    border: 2px solid #ff3366;
+}
+
+.search-button {
+    padding: 15px 30px;
+    background-color: #ff3366;
+    color: #fff;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    display: block; /* Centraliza o botão no container */
+}
+
+
+.search-button:hover {
+    background-color: #ff0033;
+}
+
+/* Slider  */
+
+
+.slider {
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 2s;
+    margin: 0.5rem;
+}
+
+.slide img {
+    width: 800px;
+    border-radius: 15px;
+   
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: #FFF;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -75%;
+}
+
+#radio5:checked ~ .first {
+    margin-left: -100%;
+}
+
+.navigation-auto div{
+    border: 2px solid #ff0033;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5ms;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #FFF;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #FFF;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #FFF;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background-color: #FFF;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5 {
+    background-color: #FFF;
+}
+
+
+/* Slider Responsivo */
+@media (max-width: 768px) {
+ @media (max-width: 768px) {
+    .slider {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide {
+        width: 100%;
+    }
+}
+    .slide {
+        width: 100%; /* Cada slide ocupa 100% da largura do slider */
+    }
+
+    .slide img {
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .manual-navigation, .navigation-auto {
+        width: 100%; /* Ajuste de largura para a navegação */
+    }
+    
+    .manual-navigation {
+        margin-top: -20px; /* Ajuste para que os botões fiquem próximos ao slider */
+    }
+
+    .manual-btn {
+        padding: 3px; /* Botões menores para mobile */
+        margin-right: 10px;
+    }
+
+    .navigation-auto {
+        margin-top: 20px; /* Espaço para a navegação automática */
+    }
+}
+
+
+/* Fim do slider  */
+
+
+/* Seção de Localização */
+
+.nearby-section {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 5rem; /* Ocupa 100% da altura da tela */
+}
+
+#user-location {
+    font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: bold;
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+@media (max-width: 768px) {
+    #user-location {
+        font-size: 1.3rem;  /* Tamanho maior para telas menores */
+    }
+}
+
+/* FIM DA SEÇÃO  */
+
+/* Cards de Acompanhantes */
+
+.acompanhantes-cards {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .acompanhantes-cards {
+        padding: 0.4rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+}
+.card {
+    background-color: #222;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    width: 450px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 500px; /* Tamanho aumentado */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.3em;
+    color: #ff3366;
+    margin-bottom: 8px;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .search-fields input[type="text"], .filter-options select {
+        width: 100%;  /* Ajusta para ocupar toda a largura disponível */
+        max-width: 100%;  /* Remover qualquer limitação de largura */
+    }
+
+    .search-button {
+        width: 100%;  /* Botão de busca ocupa toda a largura no mobile */
+    }
+
+    .advanced-search, .acompanhantes-cards {
+        width: 95%;
+    }
+
+    .search-fields, .filter-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+
+.btn-modelo {
+    padding: 0.2rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    border-color: #FFF;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ff3366;
+}

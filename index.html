@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Revuca.App - Site de Anúncios para Acompanhantes</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+    </head>    
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo"> <!-- Logo do site -->
+                <h1>Revuca.App</h1>
+            </div>
+            <div class="auth-options">
+                <select id="login-type">
+                    <option value="cliente">Login como Cliente</option>
+                    <option value="acompanhante">Login como Acompanhante</option>
+                </select>
+                <button id="login-btn">Login</button>
+                <select id="register-type">
+                    <option value="cliente">Cadastro como Cliente</option>
+                    <option value="acompanhante">Cadastro como Acompanhante</option>
+                </select>
+                <button id="register-btn">Cadastro</button>
+                <button id="publish-ad">Publicar Anúncio</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar Principal -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#acompanhantes">Acompanhantes</a></li>
+            <li><a href="#massagistas">Massagistas</a></li>
+            <li><a href="#videochamadas">Videochamadas</a></li>
+            <li>
+                <select id="filter-gender">
+                    <option value="garotas">Garotas</option>
+                    <option value="trans">Trans</option>
+                    <option value="homens">Homens</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="slider">
+
+        <div class="slides">
+            <!-- Radio Buttons -->
+             <input type="radio" name="radio-btn" id="radio1">
+             <input type="radio" name="radio-btn" id="radio2">
+             <input type="radio" name="radio-btn" id="radio3">
+             <input type="radio" name="radio-btn" id="radio4">
+             <input type="radio" name="radio-btn" id="radio5">
+             <!-- Fim Radio Buttons -->
+
+             <!-- Slide Imagens -->
+              <div class="slide first">
+                <img src="./1.jpg" alt="Primeira imagem do carrossel" />
+              </div>
+              <div class="slide ">
+                <img src="./2.jpg" alt="Segunda imagem do carrossel" />
+              </div>
+              <div class="slide ">
+                <img src="./3.jpg" alt="Terceira imagem do carrossel" />
+              </div>
+              <div class="slide ">
+                <img src="./4.jpg" alt="Quarta imagem do carrossel" />
+              </div>
+              <div class="slide ">
+                <img src="./5.jpg" alt="Quinta imagem do carrossel" />
+              </div>
+              <!-- Fim dos slides Imagens -->
+
+              <!-- Navigation auto  -->
+               <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+               </div>
+        </div>
+
+       <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        <label for="radio5" class="manual-btn"></label>
+       </div>
+
+    </div>
+
+    <!-- Busca Avançada  -->
+    <section class="advanced-search-container">
+        <button class="toggle-filters-btn" aria-expanded="false">
+            Filtros Avançados <i class="fas fa-chevron-down"></i>
+        </button>
+        
+        <section class="advanced-search">
+            <div class="search-fields">
+                <input type="text" placeholder="Onde você está?">
+                <input type="text" placeholder="O que você procura?">
+            </div>
+            <div class="filter-options">
+                <select>
+                    <option>Selecione uma cidade</option>
+                    <!-- Outras opções de cidade -->
+                </select>
+                <select>
+                    <option>Preço Mínimo</option>
+                    <!-- Outras opções de preço -->
+                </select>
+                <select>
+                    <option>Idade</option>
+                    <!-- Outras opções de idade -->
+                </select>
+                <select>
+                    <option>Atendimento para</option>
+                    <!-- Outras opções de atendimento -->
+                </select>
+            </div>
+            <button class="search-button">Pesquisar</button>
+        </section>
+    </section>
+
+
+    <!-- Aqui vai ficar meu carrossel -->
+
+   
+
+    <!-- Fim do carrossel  -->
+
+
+
+    </div>
+    </section>
+
+            <!-- Acompanhantes Próximas [Localização do Usuário] -->
+            <section class="nearby-section">
+                <h2 id="user-location">Acompanhantes próximas a [Sua localização]</h2>
+            </section>
+
+
+    <!-- Cards de Acompanhantes -->
+    <section class="acompanhantes-cards">
+        <!-- Aqui iremos renderizar cada card de acompanhante com JavaScript -->
+        <section class="acompanhantes-cards">
+            <div class="card">
+                <img src="./mari-avila.jpg" alt="Acompanhante">
+                <h3>Mari Avila</h3>
+                <p><b>Localização:</b> Franco da Rocha</p>
+                <p><b>Idade:</b> 25</p>
+                <p><b>Preço:</b> R$ 300</p>
+                <p><strong>Verificada</strong></p>
+                <p><b>Vídeos:</b> 5 disponíveis</p>
+                <button class="btn-modelo" onclick="btnModelo()">Quero Ela!</button>
+            </div>
+            
+            <!-- Repetir o card para outros acompanhantes -->
+             
+        </section>
+
+        </section>  
+        
+    </section>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

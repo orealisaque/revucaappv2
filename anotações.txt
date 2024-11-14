@@ -1,0 +1,199 @@
+<div class="slider">
+    <div class="slides">
+        <!-- Radio Slide -->
+        <input type="radio" name="radio-btn" id="radio1" checked>
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <input type="radio" name="radio-btn" id="radio5">
+        
+        <!-- FIM RADIO SLIDE -->
+
+        <!-- slides images -->
+        <div class="slide first">
+            <img src="./1.jpg" alt="Imagem de Destaque 1">
+            <div class="carousel-text">
+                <h2>Top 10 da sua Cidade</h2>
+                <p>Aqui estão as top 10 da sua cidade.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./2.jpg" alt="Imagem de Destaque 2">
+            <div class="carousel-text">
+                <h2>As mais Avaliadas</h2>
+                <p>Aqui estão as com as melhores avaliações</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./3.jpg" alt="Imagem de Destaque 3">
+            <div class="carousel-text">
+                <h2>Contos Eróticos</h2>
+                <p>Algumas histórias picantes para você se divertir</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./4.jpg" alt="Imagem de Destaque 4">
+            <div class="carousel-text">
+                <h2>Packs e Vídeos</h2>
+                <p>Que tal alguns packs ou vídeos para gozar?</p>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./5.jpg" alt="Imagem de Destaque 5">
+            <div class="carousel-text">
+                <h2>Entre em Grupos</h2>
+                <p>Entre nos melhores Grupos de Putaria do Brasil</p>
+            </div>
+        </div>
+        <!-- Fim dos slides -->
+    </div>
+    <div class="manual-navigation">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+        <label for="radio5" class="manual-btn"></label>
+    </div>
+</div>
+
+
+
+
+
+
+CSS DO CARROSSEL 
+
+
+
+/* Container principal do slider */
+.slider {
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Container dos slides */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%; /* 5 slides no total, logo a largura será 5 vezes o tamanho de cada slide */
+    height: 400px;
+}
+
+.slide {
+    width: 100%; /* Cada slide ocupa 100% do tamanho do container */
+    position: relative;
+}
+
+/* Estilo das imagens dos slides */
+.slide img {
+    width: 100%; /* As imagens devem ocupar 100% da largura do slide */
+    height: 400px; /* Definindo a altura do slide */
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Estilo da sobreposição do texto no slide */
+.carousel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 90%;
+    z-index: 1; /* Garantir que o texto fique acima da imagem */
+}
+
+.carousel-text h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #ff3366;
+}
+
+.carousel-text p {
+    font-size: 1em;
+    margin: 0;
+    color: #fff;
+}
+
+/* Botões de navegação manual */
+.manual-navigation {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #FFF;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: 0 10px;
+}
+
+.manual-btn:hover {
+    background-color: #FFF;
+}
+
+/* Inputs de rádio, para que fiquem ocultos, mas controlam a navegação */
+.slides input {
+    display: none;
+}
+
+/* Navegação dos slides ao marcar o rádio */
+#radio1:checked ~ .slides {
+    transform: translateX(0); /* Move para o primeiro slide */
+}
+
+#radio2:checked ~ .slides {
+   margin-left: -25%; /* Move para o segundo slide */
+}
+
+#radio3:checked ~ .slides {
+    transform: translateX(-200%); /* Move para o terceiro slide */
+}
+
+#radio4:checked ~ .slides {
+    transform: translateX(-300%); /* Move para o quarto slide */
+}
+
+#radio5:checked ~ .slides {
+    transform: translateX(-400%); /* Move para o quinto slide */
+}
+
+/* Ajuste para garantir que o texto carrossel seja visível no mobile */
+@media (max-width: 768px) {
+    .slider {
+        width: 100%;
+        height: 300px;
+    }
+
+    .slide img {
+        height: 300px; /* Ajuste para telas menores */
+    }
+
+    /* Ajustando a posição do texto no carrossel */
+    .carousel-text {
+        bottom: 10px;
+        left: 10px;
+        padding: 10px;
+        max-width: 85%; /* Reduzindo a largura do texto no mobile */
+    }
+
+    .carousel-text h2 {
+        font-size: 1.2em; /* Ajustando o tamanho da fonte no mobile */
+    }
+
+    .carousel-text p {
+        font-size: 0.9em; /* Ajustando o tamanho da fonte no mobile */
+    }
+}
+
+
